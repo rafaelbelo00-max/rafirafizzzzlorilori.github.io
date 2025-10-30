@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turismo Jovem — Experiências que contam</title>
+  <meta name="description" content="Microsite em Português para jovens: descobre experiências, destinos, alojamentos e eventos.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Tu + IA">
+  <meta property="og:title" content="Turismo Jovem — Experiências que contam">
+  <meta property="og:description" content="Descobre experiências locais criadas para jovens.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1520975867597-0f729f7b2b2b?q=80&w=1600&auto=format&fit=crop">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;color:#121212;background:#fff}
+    a{color:inherit}
+    img{max-width:100%;height:auto}
+    /* Cabeçalho */
+    header{position:sticky;top:0;z-index:10;background:#0a7a55;color:#fff;border-bottom:2px solid #096748}
+    .wrap{max-width:1100px;margin:auto;padding:0 1rem}
+    .bar{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding:.8rem 0}
+    nav{display:flex;gap:.6rem;flex-wrap:wrap}
+    nav a{padding:.45rem .7rem;border-radius:.5rem;text-decoration:none;background:rgba(255,255,255,.18)}
+    nav a:focus, button:focus{outline:3px solid #000;outline-offset:2px}
+    /* Hero */
+    .hero{display:grid;place-items:center;min-height:60vh;background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat}
+    .hero .panel{background:rgba(0,0,0,.58);color:#fff;padding:2rem;border-radius:1rem;max-width:780px}
+    h1{font-size:clamp(1.8rem,5vw,3rem);margin:.2em 0}
+    h2{font-size:clamp(1.35rem,3vw,2rem);margin:1.2em 0 .6em}
+    h3{margin:.6em 0 .2em}
+    .muted{color:#555}
+    .btn{display:inline-block;border:2px solid #0a7a55;background:#0a7a55;color:#fff;padding:.6rem .9rem;border-radius:.6rem;text-decoration:none}
+    .btn.secondary{background:#fff;color:#0a7a55}
+    .section{padding:3rem 0}
+    /* Grids & Cards */
+    .grid{display:grid;gap:1rem}
+    @media(min-width:760px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    .card{border:1px solid #e5e5e5;border-radius:.9rem;overflow:hidden;background:#fff;height:100%;display:flex;flex-direction:column}
+    .card img{aspect-ratio:16/10;object-fit:cover;display:block}
+    .pad{padding:1rem}
+    .tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+    .tag{font-size:.8rem;background:#eef7f3;border:1px solid #d8efe6;border-radius:999px;padding:.2rem .6rem}
+    /* Lista simples (eventos) */
+    .list{display:grid;gap:.75rem}
+    .event{border:1px solid #e5e5e5;border-radius:.8rem;padding:1rem}
+    .event strong{display:block}
+    /* Quiz */
+    .quiz{border:2px dashed #0a7a55;padding:1rem;border-radius:.8rem}
+    /* Rodapé */
+    footer{background:#f7f7f7;border-top:1px solid #eaeaea;padding:2rem 0;margin-top:2rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    /* Banner de cookies */
+    .cookie{position:fixed;right:1rem;bottom:1rem;z-index:9999;max-width:360px;background:#111;color:#fff;padding:1rem;border-radius:.85rem;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .cookie p{margin:.4rem 0 1rem}
+    .cookie .actions{display:flex;gap:.5rem;flex-wrap:wrap}
+    .cookie button{border:0;padding:.55rem .8rem;border-radius:.6rem;cursor:pointer}
+    .cookie .accept{background:#0a7a55;color:#fff}
+    .cookie .reject{background:#fff;color:#0a7a55;border:2px solid #0a7a55}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header role="banner">
+    <div class="wrap bar">
+      <strong aria-label="Marca">Turismo Jovem</strong>
+      <nav aria-label="Secções">
+        <a href="#experiencias">Experiências</a>
+        <a href="#destinos">Destinos</a>
+        <a href="#alojamento">Onde Ficar</a>
+        <a href="#atividades">Atividades</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="wrap" role="main">
+    <section class="hero section" aria-label="Destaque">
+      <div class="panel">
+        <h1>Descobre experiências pensadas para jovens</h1>
+        <p class="muted">Passeios, destinos, alojamentos e eventos — pronto para telemóvel e computador.</p>
+        <p>
+          <a class="btn" href="#destinos">Explorar destinos</a>
+          <a class="btn secondary" href="#experiencias">Ver experiências</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Experiências -->
+    <section id="experiencias" class="section" aria-labelledby="ttl-exp">
+      <h2 id="ttl-exp">Experiências em destaque</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+R3J1cG8gZGUgam92ZW5zIGEgY2FtaW5oYXIgbnVtIHRyaWxobyBjb3N0ZWlybyBhbyBww7RyIGRvIHNvbDwvdGV4dD4KPC9zdmc+';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Grupo de jovens a caminhar num trilho costeiro ao pôr do sol">
+          <div class="pad">
+            <h3>Trilho ao pôr do sol</h3>
+            <p class="muted">Caminhada leve com miradouros, fotos épicas e história local.</p>
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">Grátis</span><span class="tag">2–3 h</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+TWVzYSBjb20gcGV0aXNjb3MgdHJhZGljaW9uYWlzIGUgYmViaWRhczwvdGV4dD4KPC9zdmc+';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Mesa com petiscos tradicionais e bebidas">
+          <div class="pad">
+            <h3>Tour de petiscos</h3>
+            <p class="muted">Roteiro por tascas e mercados com produtos sazonais.</p>
+            <div class="tags"><span class="tag">Foodie</span><span class="tag">€</span><span class="tag">1,5–2 h</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+Q2VudHJvIGhpc3TDs3JpY28gY29tIGFycXVpdGV0dXJhIHRyYWRpY2lvbmFsPC90ZXh0Pgo8L3N2Zz4=';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Centro histórico com arquitetura tradicional">
+          <div class="pad">
+            <h3>Centro histórico</h3>
+            <p class="muted">Passeio guiado pelos ícones culturais e segredos urbanos.</p>
+            <div class="tags"><span class="tag">Cultura</span><span class="tag">€</span><span class="tag">1–2 h</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Destinos em Destaque -->
+    <section id="destinos" class="section" aria-labelledby="ttl-dest">
+      <h2 id="ttl-dest">Destinos em destaque</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+UGFsw6FjaW8gZSBqYXJkaW5zIGhpc3TDs3JpY29zPC90ZXh0Pgo8L3N2Zz4=';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/137A7/production/_128338797_gettyimages-150616225-1.jpg" alt="Palácio e jardins históricos">
+          <div class="pad">
+            <h3>Sintra</h3>
+            <p class="muted">Palácios coloridos, neblina mágica e trilhos na serra.</p>
+            <div class="tags"><span class="tag">Cultura</span><span class="tag">Natureza</span><span class="tag">Comboio</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+UHJhaWEgY29tIGZhbMOpc2lhcyBlIG1hcjwvdGV4dD4KPC9zdmc+';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Praia com falésias e mar">
+          <div class="pad">
+            <h3>Costa da Caparica</h3>
+            <p class="muted">Praias extensas, surf, pores-do-sol e restaurantes à beira-mar.</p>
+            <div class="tags"><span class="tag">Praia</span><span class="tag">Surf</span><span class="tag">Autocarro</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0htiMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+TW9udGFuaGFzIGNvbSBuZXZlIGUgY8OpdSBhenVsPC90ZXh0Pgo8L3N2Zz4=';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://thvnext.bing.com/th/id/OIP.8hhxx9s8QmC6KIzJZQEuiAHaE9?w=261&h=180&c=7&r=0&o=7&cb=12&pid=1.7&rm=3" alt="Montanhas com neve e céu azul">
+          <div class="pad">
+            <h3>Serra da Estrela</h3>
+            <p class="muted">Trilhos, vistas épicas e queijarias artesanais.</p>
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">Roadtrip</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Onde Ficar -->
+    <section id="alojamento" class="section" aria-labelledby="ttl-stay">
+      <h2 id="ttl-stay">Onde ficar</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+UXVhcnRvIGRlIGhvc3RlbCBtb2Rlcm5vIGNvbSBiZWxpY2hlczwvdGV4dD4KPC9zdmc+';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="data:image/webp;base64,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" alt="Quarto de hostel moderno com beliches">
+          <div class="pad">
+            <h3>Hostel central</h3>
+            <p class="muted">Opção económica com pequenos-almoços e eventos de socialização.</p>
+            <div class="tags"><span class="tag">€</span><span class="tag">Centro</span><span class="tag">Partilhado</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+VGVuZGEgZ2xhbW9yb3NhIGFvIGFyIGxpdnJlPC90ZXh0Pgo8L3N2Zz4=';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Tenda glamorosa ao ar livre">
+          <div class="pad">
+            <h3>Glamping</h3>
+            <p class="muted">Contacto com a natureza com conforto e fotogenia garantida.</p>
+            <div class="tags"><span class="tag">Natureza</span><span class="tag">€€</span><span class="tag">Romântico</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+QXBhcnRhbWVudG8gbW9kZXJubyBjb20gc2FsYSBsdW1pbm9zYTwvdGV4dD4KPC9zdmc+';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Apartamento moderno com sala luminosa">
+          <div class="pad">
+            <h3>Apartamento jovem</h3>
+            <p class="muted">Ideal para grupos — cozinha equipada e boa localização.</p>
+            <div class="tags"><span class="tag">Grupo</span><span class="tag">€€</span><span class="tag">Cozinha</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Atividades -->
+    <section id="atividades" class="section" aria-labelledby="ttl-acts">
+      <h2 id="ttl-acts">Atividades</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+QXVsYSBkZSBzdXJmIGNvbSBwcmFuY2hhcyBuYSBhcmVpYTwvdGV4dD4KPC9zdmc+';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1467951591042-f388365db261?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Aula de surf com pranchas na areia">
+          <div class="pad">
+            <h3>Aula de surf</h3>
+            <p class="muted">Instrutores certificados e material incluído.</p>
+            <div class="tags"><span class="tag">Praia</span><span class="tag">Aventura</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+QmljaWNsZXRhcyBhbGluaGFkYXMgbnVtYSBjaWNsb3ZpYTwvdGV4dD4KPC9zdmc+';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1558402681-459490272726?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Bicicletas alinhadas numa ciclovia">
+          <div class="pad">
+            <h3>Bike tour</h3>
+            <p class="muted">Percurso plano por miradouros e bairros criativos.</p>
+            <div class="tags"><span class="tag">Cardio</span><span class="tag">Cidade</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDEyMDAgNzUwIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTZlNmU2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZmlsbD0iIzU1NSI+TWVzYSBjb20gcHJhdG9zIGRlIGRlZ3VzdGHDp8OjbyBlIGNvcG9zPC90ZXh0Pgo8L3N2Zz4=';" style="object-fit:cover;width:100%;height:auto;aspect-ratio:16/10;display:block;border-radius:12px;" crossorigin="anonymous" referrerpolicy="no-referrer" decoding="async" loading="eager" height="750" width="1200" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=80&fm=jpg" alt="Mesa com pratos de degustação e copos">
+          <div class="pad">
+            <h3>Degustação local</h3>
+            <p class="muted">Provas de produtos regionais e histórias do produtor.</p>
+            <div class="tags"><span class="tag">Foodie</span><span class="tag">Local</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Eventos Próximos -->
+    <section id="eventos" class="section" aria-labelledby="ttl-events">
+      <h2 id="ttl-events">Eventos próximos</h2>
+      <div class="list" role="list">
+        <div class="event" role="listitem">
+          <strong>Sunset Hike & Chill</strong>
+          <span class="muted">Sáb 18:30 — Miradouro da Costa</span><br>
+          <span class="muted">Ponto de encontro: Parque de estacionamento principal</span>
+        </div>
+        <div class="event" role="listitem">
+          <strong>Street Food Night</strong>
+          <span class="muted">Sex 20:00 — Mercado Criativo</span><br>
+          <span class="muted">Entrada livre • Opções vegetarianas</span>
+        </div>
+        <div class="event" role="listitem">
+          <strong>Bike Morning Tour</strong>
+          <span class="muted">Dom 09:30 — Centro Histórico</span><br>
+          <span class="muted">Bicicleta incluída • Nível iniciante</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="section" aria-labelledby="ttl-quiz">
+      <h2 id="ttl-quiz">Quiz rápido</h2>
+      <p class="muted">Escolhe o teu mood e recebe uma recomendação.</p>
+      <form class="quiz" aria-describedby="quizhelp">
+        <p id="quizhelp" class="sr-only">Selecciona uma opção e clica em recomendar.</p>
+        <label><input type="radio" name="mood" value="aventura"> Aventura</label><br>
+        <label><input type="radio" name="mood" value="relax"> Relax</label><br>
+        <label><input type="radio" name="mood" value="foodie"> Gastronomia</label><br><br>
+        <button type="button" class="btn" id="recommend">Recomendar</button>
+      </form>
+      <div id="result" role="status" aria-live="polite" class="pad"></div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section" aria-labelledby="ttl-about">
+      <h2 id="ttl-about">Sobre o microsite</h2>
+      <div class="grid cols-2">
+        <p>Este site foi criado com IA e optimizado para acessibilidade e SEO básico. É um único ficheiro (index.html), fácil de editar e publicar nas Páginas do GitHub.</p>
+        <p>Imagens livres (Unsplash). Podes adaptar os textos para a tua cidade e adicionar reservas por email.</p>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section" aria-labelledby="ttl-contact">
+      <h2 id="ttl-contact">Contacto</h2>
+      <p class="muted">Reservas e perguntas: <a href="mailto:ola@example.com">ola@example.com</a></p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <p>© <span id="year"></span> Turismo Jovem • Acessível e leve</p>
+    </div>
+  </footer>
+
+  <!-- Banner de cookies (sem rastreio) -->
+  <div id="cookie" class="cookie" role="dialog" aria-live="polite" aria-label="Preferências de cookies" aria-modal="false" hidden>
+    <strong>🍪 Preferências de cookies</strong>
+    <p>Usamos apenas o essencial para o funcionamento do site (sem rastreio). Podes aceitar ou rejeitar — a tua navegação não será afectada.</p>
+    <div class="actions">
+      <button class="accept" id="cookie-accept" type="button" aria-label="Aceitar cookies essenciais">Aceitar</button>
+      <button class="reject" id="cookie-reject" type="button" aria-label="Rejeitar cookies">Rejeitar</button>
+    </div>
+  </div>
+
+  <script>
+    // Ano atual
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Quiz simples
+    const btn = document.getElementById('recommend');
+    const out = document.getElementById('result');
+    btn.addEventListener('click', () => {
+      const choice = document.querySelector('input[name="mood"]:checked');
+      if(!choice){ out.textContent = 'Escolhe um mood primeiro 😉'; return; }
+      const v = choice.value;
+      const map = {
+        'aventura': '💥 Recomendação: Sunset Hike & Chill com miradouros e subida leve.',
+        'relax': '🧘 Recomendação: Passeio pelo centro histórico + café numa esplanada tranquila.',
+        'foodie': '🍽️ Recomendação: Street Food Night no Mercado Criativo.'
+      };
+      out.textContent = map[v] || 'Explora as experiências em cima!';
+    });
+
+    // Rolagem suave
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+
+    // Cookies (consent-first, sem rastreio)
+    (function(){
+      const KEY = 'consent';
+      const banner = document.getElementById('cookie');
+      const accepted = localStorage.getItem(KEY);
+      if(!accepted){ banner.hidden = false; }
+      document.getElementById('cookie-accept').addEventListener('click', () => {
+        localStorage.setItem(KEY, 'accepted');
+        banner.hidden = true;
+      });
+      document.getElementById('cookie-reject').addEventListener('click', () => {
+        localStorage.setItem(KEY, 'rejected');
+        banner.hidden = true;
+      });
+    })();
+  </script>
+</body>
+</html>
